@@ -55,7 +55,7 @@ _     _              _
 ```
 
 This process can be done in reverse from the right side.
-Instead count 0s and increase potential minimum flip on 1s.
+Instead count '0's and increase potential minimum flip on '1's.
 
 
 
