@@ -13,7 +13,7 @@ and then compare the new min_flips to the ones_count, and reassign it to the sma
 
 This is because we need to determine if there are less steps 
 in flipping all the current 1s (turning it all to '0's)
-or in the current min_flips (which may initially consists of '0's, but depending on string length will also eventually become a mix of flips that include '1's)
+or in the current min_flips (which may seem to initially consists of '0's, but depending on string length will also eventually become a mix of flips that include '1's)
 
 Example:
 ```
