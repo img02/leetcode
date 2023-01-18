@@ -1,5 +1,5 @@
 func minFlipsMonoIncr(s string) int {
-	ones_count, flip_count := 0, 0
+	ones_count, min_flips := 0, 0
 
 	for _, v := range s {
 		if v == '1' {
@@ -9,14 +9,14 @@ func minFlipsMonoIncr(s string) int {
 		//else char is '0'
 
 		//potential flip count increases
-		flip_count++
+		min_flips++
 
 		//compare new potential flip count with
 		//total 1s that would need to be flipped
 		//to become monotone increasing
-		if ones_count < flip_count {
-			flip_count = ones_count
+		if ones_count < min_flips {
+			min_flips = ones_count
 		}
 	}
-	return flip_count
+	return min_flips
 }
