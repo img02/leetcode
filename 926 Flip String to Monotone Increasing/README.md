@@ -30,7 +30,7 @@ _______________
 |1  0  1  0  0| 1  1  0  1     | 2       | 2      (min_flips = 3, compare w/ ones_count (which is 2) , reassign to ones_count value)
                                                             this is because it's determined to be less steps to flip 
                                                             all 1s than all 0s in current subsection.
-                                                            Notice how now the min_flips includes 1s and not just 0s
+                                                            Notice how now the min_flips includes '1's and not just '0's
                                                             for this subsection, which will apply and carry forward 
                                                             towards the whole string
 __________________ 
@@ -39,7 +39,11 @@ _____________________
 |1  0  1  0  0  1  1| 0  1     | 4       | 2
 ________________________
 |1  0  1  0  0  1  1  0| 1     | 4       | 3      (min_flips = 3, less than ones_count, remain as 3)
-________________________ 
+                                                  min_flips now consists of a mix of two '1's from a previous subsection
+                                                  and one '0'from this new subsection.
+                                                  
+
+__________________________
 |1  0  1  0  0  1  1  0 1|     | 5       | 3
 
 min_flips is 3
