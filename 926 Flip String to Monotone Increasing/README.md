@@ -29,14 +29,14 @@ ____________
 _______________
 |1  0  1  0  0| 1  1  0  1     | 2       | 2      (min_flips = 3, compare w/ ones_count, reassign to ones_count value)
                                                             this is because it's determined to be less steps to flip 
-__________________ 			                                     all 1s than all 0s in current subsection.
+			                                                        all 1s than all 0s in current subsection.
+                                                           Notice how now the min_flips includes 1s, not just 0s.
+__________________ 
 |1  0  1  0  0  1| 1  0  1     | 3       | 2
 _____________________
 |1  0  1  0  0  1  1| 0  1     | 4       | 2
 ________________________
 |1  0  1  0  0  1  1  0| 1     | 4       | 3      (min_flips = 3, less than ones_count, remain as 3)
-                                                            because less steps to flip all 0s than all 1s in this subsection
-
 ________________________ 
 |1  0  1  0  0  1  1  0 1|     | 5       | 3
 
