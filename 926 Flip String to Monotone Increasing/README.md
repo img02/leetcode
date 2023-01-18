@@ -17,7 +17,7 @@ or in the current min_flips (which initially consists of 0s, but depending on st
 
 Example:
 ```
- 1  0  1  0  0  1  1  0  1     | Ones | MinFlips    (new subsections are shown by pipes around nums)
+1  0  1  0  0  1  1  0  1     | Ones | MinFlips    (new subsections are shown by pipes around nums)
 ___
 |1| 0  1  0  0  1  1  0  1     | 1       | 0
 _____
@@ -27,10 +27,11 @@ _________
 ____________
 |1  0  1  0| 0  1  1  0  1     | 2       | 2      (min_flips increase to 2, then compared to ones_count and assigned w/e is smaller)
 _______________
-|1  0  1  0  0| 1  1  0  1     | 2       | 2      (min_flips = 3, compare w/ ones_count, reassign to ones_count value)
+|1  0  1  0  0| 1  1  0  1     | 2       | 2      (min_flips = 3, compare w/ ones_count (which is 2) , reassign to ones_count value)
                                                             this is because it's determined to be less steps to flip 
-			                                                        all 1s than all 0s in current subsection.
-                                                           Notice how now the min_flips includes 1s, not just 0s.
+                                                            all 1s than all 0s in current subsection.
+                                                            Notice how now the min_flips includes 1s and not just 0s
+                                                            for this subsection, which will apply to the whole string
 __________________ 
 |1  0  1  0  0  1| 1  0  1     | 3       | 2
 _____________________
