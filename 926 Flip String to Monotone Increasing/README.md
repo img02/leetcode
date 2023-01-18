@@ -5,9 +5,9 @@ therefore their count should be taken.
 As we iterate over the chars of the string, 
 we are increasing the subsection we are working on / sorting
 
-So if the new char (on the far right) is a 1 - we increase 1 count and move on
+So if the new char (on the far right) is a '1' - we increase ones_count and move on (as having a '1' on the end is fine for monotone increasing)
 
-If the new char is a 0, because 1s must be to the right and 0s to the left for monotone increasing,
+If the new char is a '0', because '1's must be to the right and '0's to the left for monotone increasing,
 we need to increase (potential) minimum required flips count,
 and then compare the new min_flips to the ones_count, and reassign it to the smaller value
 
