@@ -12,8 +12,8 @@ we need to increase (potential) minimum required flips count,
 and then compare the new min_flips to the ones_count, and reassign it to the smaller value
 
 This is because we need to determine if there are less steps 
-in flipping all the previous 1s (turning it all to zeroes)
-or in flipping previous 0s (turning it all to ones)
+in flipping all the current 1s (turning it all to zeroes)
+or in the current min_flips (which initially consists of 0s, but depending on string length will also eventually become a mix of flips that include 1s)
 
 Example:
 
