@@ -31,7 +31,8 @@ _______________
                                                             this is because it's determined to be less steps to flip 
                                                             all 1s than all 0s in current subsection.
                                                             Notice how now the min_flips includes 1s and not just 0s
-                                                            for this subsection, which will apply to the whole string
+                                                            for this subsection, which will apply and carry forward 
+                                                            towards the whole string
 __________________ 
 |1  0  1  0  0  1| 1  0  1     | 3       | 2
 _____________________
