@@ -40,8 +40,7 @@ _____________________
 ________________________
 |1  0  1  0  0  1  1  0| 1     | 4       | 3      (min_flips = 3, less than ones_count, remain as 3)
                                                   min_flips now consists of a mix of two '1's from a previous subsection
-                                                  and one '0'from this new subsection.
-                                                  
+                                                  and one '0'from this new subsection.                                                  
 
 __________________________
 |1  0  1  0  0  1  1  0 1|     | 5       | 3
