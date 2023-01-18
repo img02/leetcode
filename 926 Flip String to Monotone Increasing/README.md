@@ -16,7 +16,7 @@ in flipping all the current 1s (turning it all to zeroes)
 or in the current min_flips (which initially consists of 0s, but depending on string length will also eventually become a mix of flips that include 1s)
 
 Example:
-
+```
  1  0  1  0  0  1  1  0  1     | Ones | MinFlips    (new subsections are shown by pipes around nums)
 ___
 |1| 0  1  0  0  1  1  0  1     | 1       | 0
@@ -28,8 +28,8 @@ ____________
 |1  0  1  0| 0  1  1  0  1     | 2       | 2      (min_flips increase to 2, then compared to ones_count and assigned w/e is smaller)
 _______________
 |1  0  1  0  0| 1  1  0  1     | 2       | 2      (min_flips = 3, compare w/ ones_count, reassign to ones_count value)
-                                                            this is because it's determined to be less steps to flip all 1s than all 0s
-__________________ 																		 in current subsection.
+                                                            this is because it's determined to be less steps to flip 
+__________________ 			                                     all 1s than all 0s in current subsection.
 |1  0  1  0  0  1| 1  0  1     | 3       | 2
 _____________________
 |1  0  1  0  0  1  1| 0  1     | 4       | 2
@@ -47,7 +47,7 @@ _     _              _
 1  0  1  0  0  1  1  0 1
     to
 0  0  0  0  0  1  1  1 1
-
+```
 
 This process can be done in reverse from the right side.
 Instead count 0s and increase potential minimum flip on 1s.
