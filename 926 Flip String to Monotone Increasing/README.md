@@ -1,3 +1,9 @@
+# Flip String to Monotone Increasing
+
+## Medium
+
+### https://leetcode.com/problems/flip-string-to-monotone-increasing/description/
+
 Conventionally starting from the left of the string,
 1s have more 'weight' and need to be on the right side, 
 therefore their count should be taken.
