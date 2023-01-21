@@ -23,4 +23,6 @@ Idk, my answer works but took me ages and got really messy from edge cases.
 
 Ideally would / need to refactor.
 
-Annoying question.
+Annoying question. Too many unneccessary edge cases, felt more like a weird puzzle than algorithm / logic question.
+
+My Go solution - somehow 0ms beats 100%? My code is so bad.
