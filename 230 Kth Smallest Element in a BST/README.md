@@ -19,7 +19,7 @@ Recursive:
 ```
 	1. Pass in Node, K, and KthValue (set to -1) // since Node Value is 0 <= Node.val <= 10^4  
 	2. Go down left node  
-	3. If KthValue is not -1 -- Kth Smallest Value has been found from and we're returning; popping off call stack  
+	3. If KthValue is not -1 -- Kth Smallest Value has been found already and we're returning; popping off call stack  
 	4. Decrement K  
 	5. If K is 0; Kth Node -- return value up  
 	6. Go down right node  
