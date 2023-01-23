@@ -17,15 +17,15 @@ In a BST:
 
 Recursive:  
 ```
-	Go down left, each left node must be smaller than its parent node (max)
-	
+	Go down left, each left node must be smaller than its parent node (max) 	
 	Go down right, each right node must be larger than its parent node (min)
+		- and must also follow the min/max constraints of its parent node
 
 	so pass through (node, max, min)
 	with max, min initially set to int64 max and min values - as node value range is int32 max/min	
 
-	When going down left, pass the current node value as the max value
-	When going down right, pass the current node value as the min value
+	When going down left, pass the current node value as the max value		
+	When going down right, pass the current node value as the min value					
 
 	each node value must then be greater than min, smaller than max.
 ```
