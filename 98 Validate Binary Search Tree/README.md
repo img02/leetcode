@@ -56,4 +56,7 @@ Iterative:
 		right node larger than parent and parent's left node / subtree
 	
 ```
+paint attempt at visual explanation
+![image](https://user-images.githubusercontent.com/70348218/213951834-89838a19-2f19-430f-9c72-b3ed7173f7b6.png)
+
 	
