@@ -1,5 +1,5 @@
 func twoSum(nums []int, target int) []int {    
-    // 'hashset' map contains the compliments required for whole number division
+    // map contains the compliments required for whole number division
     // for each num
     compliments := make(map[int]int)
     results := make([]int, 2)
