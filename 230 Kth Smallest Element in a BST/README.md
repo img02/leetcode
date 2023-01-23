@@ -5,20 +5,23 @@
 Go down all the way left, 
 
 
-Iterative: 
-	Using a LIFO data structure / system
-	Once all the way down left (left node null)
-	Pop the last node off the Stack
-	Decrement K
-	If K is 0; We've found our Kth Node -- return the value
+Iterative:  
+```
+	1. Using a LIFO data structure / system  
+	2. Once all the way down left (left node null)  
+	3. Pop the last node off the Stack  
+	4. Decrement K  
+	5. If K is 0; We've found our Kth Node -- return the value 
+```
 	
 	
-Recursive:
-	Pass in Node, K, and KthValue (set to -1) // since Node Value is 0 <= Node.val <= 10^4
-	Go down left node
-	If KthValue is not -1 -- Kth Smallest Value has been found from and we're returning; popping off call stack
-	Decrement K
-	If K is 0; Kth Node -- return value up
-	Go down right node
-	Go back up, returning current K index count
-	
+Recursive:  
+```
+	1. Pass in Node, K, and KthValue (set to -1) // since Node Value is 0 <= Node.val <= 10^4  
+	2. Go down left node  
+	3. If KthValue is not -1 -- Kth Smallest Value has been found already and we're returning; popping off call stack  
+	4. Decrement K  
+	5. If K is 0; Kth Node -- return value up  
+	6. Go down right node  
+	7. Go back up, returning current K index count  
+```
