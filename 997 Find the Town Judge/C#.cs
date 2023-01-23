@@ -2,8 +2,6 @@ public class Solution {
     public int FindJudge(int n, int[][] trust) {   
         var trustedCount = new int[n, 1];     
 
-        var trustDict = new Dictionary<int,int>();
-
         if (n == 1) return 1;
 
         for (int i = 0; i < trust.Length; i++)
@@ -23,5 +21,7 @@ public class Solution {
         }
 
         return -1;
+
+
     }
 }
