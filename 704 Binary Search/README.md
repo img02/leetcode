@@ -28,8 +28,8 @@ Or for the edge case where the array lenght is 1.
 When calculating middle index, the middle index can either be skewed to the left or to the right.  
 
 	[... 3, 4, 5, 6, 7, 8...]	
-		 ^	   ^  ^	    ^
-		low	   mid?	   upper  
+	     ^     ^  ^     ^
+	    low    mid?   upper  
 		
 middle = (upper + lower) / 2  		|- left side 
 middle = (upper + lower + 1) / 2	|- right side
@@ -42,16 +42,16 @@ This is important when there are two indexes left.
 	mid		(target = 6)
 	 V
 	[4, 6]		if skewing left for middle and adjusting lower to be = middle,
-	 ^	^		when the target is greater than the mid index value, 
-	lo	hi		this will cause an infinite loop. lower = mid, upper = mid - 1
+	 ^  ^		when the target is greater than the mid index value, 
+	lo  hi		this will cause an infinite loop. lower = mid, upper = mid - 1
 	
 
 	
 	mid		(target = 6)
 	 V
 	[4, 6]		But if upper inclusive, lower exclusive
-	 ^	^		lower = mid + 1, upper = mid
-	lo	hi		lower == upper, breaking loop
+	 ^  ^		lower = mid + 1, upper = mid
+	lo  hi		lower == upper, breaking loop
 				lower = index of 6, the target
 				
 				Which means no need to var mid to exist outside of the loop  				
