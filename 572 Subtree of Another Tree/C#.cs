@@ -18,9 +18,8 @@ public class Solution {
     }
 
     // go through the nodes using stack - DFS
-    // if you hit a node matching the value of subroot
-    // call second function, if true - is subtree
-    // else repeat for remaining nodes
+    // if you hit a node matching the value of subroot, call second function, if true - is subtree
+	// else repeat for remaining nodes
     private bool Iterative(TreeNode root, TreeNode subroot) {           
         var stack = new Stack<TreeNode>();
 
@@ -38,10 +37,8 @@ public class Solution {
     }
 
     // if matching root value found, call this function
-    // use 2 stacks, add nodes using DFS
-    // at beginning of loop, check if stack counts match
-    // add all left nodes til null
-    // pop off both stack, compare values
+    // use 2 stacks, add nodes using DFS, at beginning of loop, check if stack counts match
+    // add all left nodes til null, pop off both stack, compare values
     // try going to right node, repeat until either matching subtree or false
     private bool IterativeSubTree(TreeNode root, TreeNode subroot) {
         var rootStack = new Stack<TreeNode>();
@@ -74,8 +71,7 @@ public class Solution {
 
     // if both nodes null, matching
     // if only one node null, not matching
-    // if matching node values found, call second function
-    // repeat
+    // if matching node values found, call second function, repeat    
     private bool Recursive(TreeNode root, TreeNode subRoot) {
         // if both false checked first
         if (root == null && subRoot == null) return true;
