@@ -1,5 +1,6 @@
 func climbStairs(n int) int {
-    return recursive(n);
+    //return recursive(n);
+    return dp(n);
 }
 
 
@@ -26,4 +27,29 @@ func recursive(n int) int {
     // and add it to the map
     combos[n] = recursive(n-1) + recursive(n-2)
     return combos[n]
+}
+
+func dp (n int) int {
+  // one and two are the combo counts for the 2 previous steps
+  // climbing from 0 to n
+  // it takes 0 steps to get to step 0
+  // it takes 1 step to get to step 1 - from 0        
+
+  // it takes (combos to step 0)+2 to get to step 2
+  // it takes (combos to step 1)+1 to get to step 2
+
+  // basically, the combination count for each step is made of of
+  // the count for the prior step + (taking 1 step)
+  // and the count for the prior-prior step + (taking 2 steps)       
+        
+  //starting at step 0 and 1
+
+  one, two := 0, 1;
+
+  for i := 0; i < n; i++ {
+      temp := two
+      two = one + two
+      one = temp
+  }
+  return two
 }
