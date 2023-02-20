@@ -1,7 +1,8 @@
 public class Solution {
     public int ClimbStairs(int n) {
         //return recursive(n);
-        return dp(n);
+        //return dp(n);
+		return cleaner(n);
     }
 
    
@@ -44,5 +45,20 @@ public class Solution {
             one = temp;
         }
         return two;
+    }
+	
+	private int cleaner(int n){
+       if (n == 1) return 1;
+       if (n == 2) return 2;
+
+       // sum of combos one and two steps before current
+       var one = 2;
+       var two = 1;
+
+       // stops before n -- so we have the number of combos at n-1 and n-2
+       for (int i = 3; i < n; i++){
+           (one, two) = (one+two, one);
+       }
+       return one+two;
     }
 }

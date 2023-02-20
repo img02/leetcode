@@ -1,8 +1,27 @@
 func climbStairs(n int) int {
     //return recursive(n);
-    return dp(n);
+    //return dp(n);
+    return cleaner(n);
 }
 
+func cleaner(n int) int {
+    if (n == 1){ 
+        return 1
+    }
+    if (n == 2){
+        return 2
+    }
+
+    // combos at one and two steps before current step
+    one, two := 2, 1
+    
+    // loop stops one step before n, so return sum of one and two 
+    for i := 3; i < n; i++ {
+        one, two = one+two, one
+    }
+
+    return one+two;
+}
 
 // a map of the possible combos to reach 0 from point m
 // where n > m > 0
