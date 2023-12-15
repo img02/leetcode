@@ -37,11 +37,17 @@ public class Solution {
 		
         var results = new int[nums.Length];
 
+		// prefix and postfix don't need to be stored in arrays - heap mem
+		// can be stored on stack in local variables
+		// as they are eached used only once per num / result int, then updated
+		
         var prefix = 1;
         for (var i = 0; i < nums.Length; i++){
             results[i] = prefix; // store prefix 
             prefix *= nums[i]; // update prefix product for next loop,
-			// product of prev values
+			// pre and post values are the product of all prior numbers to num[index]
+			// so num[i+1] pre is num[i] * prefix[i]
+			// vice-versa for postfix
         }
         var postfix = 1;
         for (var i = nums.Length -1; i >= 0; i--){ // reverse
