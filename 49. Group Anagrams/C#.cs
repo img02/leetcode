@@ -16,7 +16,10 @@ public class Solution {
                  * so requires some delimiter value
                  */
 
-
+				// viable to just sort char array from string, uses quicksort n log n, slower
+				// var hash = s.ToCharArray();
+				// Array.Sort(hash);        
+				
                 var hash = new char[26];
                 //var hash = new int[26];
                 foreach (var c in s)
