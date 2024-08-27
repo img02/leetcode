@@ -57,14 +57,13 @@ public class Solution {
         if (s.Length != t.Length) return false;
 
         var letters = new Dictionary<char, int>();
-        foreach (var c in s){
-            if (!letters.TryAdd(c, 1)) //false if key exists
-                letters[c]++;
-        }
 
-        foreach (var c in t) {
-            if (!letters.TryAdd(c, 1))
-                letters[c]--;
+        for (var i = 0; i < s.Length; i++){
+            letters.TryAdd(s[i], 0); // false if key exists
+            letters.TryAdd(t[i], 0);
+
+            letters[s[i]]++;
+            letters[t[i]]--;
         }
 
         foreach (var kvp in letters){
