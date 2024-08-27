@@ -22,3 +22,9 @@ OR
 use a standard library function to sort the strings alphabetically and compare using equality operator.
 
 
+OR
+
+Use a dictionary / map to track count <char, int>
++1 for first string,
+-1 for second string,
+check if each kvp value is 0

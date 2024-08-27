@@ -1,7 +1,12 @@
-using System.Collections.Immutable;
+
 public class Solution {
     public bool IsAnagram(string s, string t) {
-        
+    //return WithArray(s,t);
+	return WithDict(s,t);
+    }
+	
+	private bool WithArray(string s, string t){
+		    
        if (s.Length != t.Length) return false;
 
        var alphabet = new int[26];       
@@ -45,5 +50,27 @@ public class Solution {
 
         //same as above ^^ 
         //return s.OrderBy(c => c).SequenceEqual(t.OrderBy(d => d));
+	}
+		
+	
+	private bool WithDict(string s, string t){
+        if (s.Length != t.Length) return false;
+
+        var letters = new Dictionary<char, int>();
+        foreach (var c in s){
+            if (!letters.TryAdd(c, 1)) //false if key exists
+                letters[c]++;
+        }
+
+        foreach (var c in t) {
+            if (!letters.TryAdd(c, 1))
+                letters[c]--;
+        }
+
+        foreach (var kvp in letters){
+            if (kvp.Value != 0) return false;
+        }
+
+        return true;
     }
 }
