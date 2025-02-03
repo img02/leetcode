@@ -12,41 +12,38 @@
 public class Solution {
     public ListNode ReverseList(ListNode head) {
 
-        return reverseListIterative(head);
-        //return reverseListRecursive(head, null);
+        if (head == null || head.next == null) return head;
+        //return Iterative(head);
+        return Recursive(null, head);
     }
 
-    private ListNode reverseListIterative(ListNode head)
-    {
+    private ListNode Iterative(ListNode head){
         ListNode prev = null;
-        while (head != null)
-        {
-            var next = head.next;
-
-            head.next = prev;
-            prev = head;
-            head = next;
+        var curr = head;
+		// store temp copy of the next node,
+		// update current to |point| to previous
+		// update previous to be the current node
+		// update next to be curr, and repeat
+        while (curr != null){
+            var next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
+		// once curr is null, end of list reached,
+		// return prev as head of new reversed list.
         return prev;
     }
-
-    private ListNode reverseListRecursive(ListNode head, ListNode prev)
-    {
-        // if current node is null,
+	
+	private ListNode Recursive(ListNode prev, ListNode curr){
+		// if current node is null, end of list
         // return prev as head of newly reversed list
-        if (head == null) return prev;
-
-        // store the next node
-        var next = head.next;
-
-        // assign current node's next node as previous node
-        head.next = prev;
-        // assign prev node to be current node
-        prev = head;
-        // assign current node to next node
-        head = next;
-
-        //repeat with new current / previous node
-        return reverseListRecursive(head, prev);
+        if (curr == null) return prev;
+		// temp store the next node
+        var next = curr.next;
+		// point curr node to prev
+        curr.next = prev;
+		// repeat with next set of nodes, curr as prev, next as curr.
+        return Recursive(curr, next);
     }
 }
