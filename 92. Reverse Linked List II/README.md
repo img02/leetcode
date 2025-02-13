@@ -11,6 +11,10 @@ break the linked list down into 3 parts
 
 create a dummy node that points to the og head
 
+![image](https://github.com/user-attachments/assets/bc160f1f-b0a8-4c2a-bb11-547502dd0820)
+
+
+
 let leftTail = dummy
 let index = 1;
 
@@ -31,3 +35,5 @@ return dummy.next
 		-	leftTail still points to dummy
 		-	so when leftTail.next was set in previous step, dummy.next now points to new head.
 		-	trust me, draw it in paint
+
+![image](https://github.com/user-attachments/assets/5604d7e2-af72-47a4-83bb-2089511de1be)
