@@ -1,8 +1,8 @@
 public class Solution {
     public int Fib(int n) {
-        //return recursive(n);
+        return recursive(n);
         //return memoization(n);
-        return forLoop(n);
+        //return forLoop(n);
     }
 
     private int forLoop(int n){
@@ -31,7 +31,7 @@ public class Solution {
         if (n is 0) {
             return 0;            
         }
-        if (n is 1 or 2) {
+        if (n is 1 or 2 ) {
             return 1;            
         }
         if (fibMap.ContainsKey(n)){
