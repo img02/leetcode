@@ -6,18 +6,13 @@ var groupAnagrams = function(strs) {
     let matches = new Map();
 
     strs.forEach(s => {
-        let hash = Array(26).fill('q'); //start with random character
-        [...s].forEach(c => {
+        let hash = Array(26).fill(0); 
         
-        // messy...
-        // get char, +1 to char code, get char from code, replace in array...
-        let val = hash[c.charCodeAt() - 'a'.charCodeAt()];
-        val = String.fromCharCode(val.charCodeAt()+1);
-        hash[c.charCodeAt() - 'a'.charCodeAt()] = val;
+        for( c of s) {        
+        hash[c.charCodeAt() - 'a'.charCodeAt()]++;
+        };        
 
-        });        
-
-        let key = hash.join("");
+        let key = hash.join("-");
 
         if (!matches.has(key)){
             matches.set(key, []);            
@@ -25,11 +20,6 @@ var groupAnagrams = function(strs) {
         matches.get(key).push(s);
     })
 
-    let result = [];
 
-    matches.forEach(l => {
-        result.push(l);
-    })
-
-    return result;
+    return Array.from(matches.values());
 };
