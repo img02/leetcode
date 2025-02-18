@@ -11,7 +11,8 @@ public class Solution {
             }
             count[n]++;
         }
-
+		
+		/*
 		// use a priority queue with the key (number) as the element, value (count) as priority.
         var pq = new PriorityQueue<int,int>();
         
@@ -24,6 +25,7 @@ public class Solution {
         while (k > 0) {
             result[k-- -1] = pq.Dequeue();            
         }
+		*/
 		
 		
         /* Using stack instead of PriorityQueue, not all languages come with pq built-in 
@@ -53,6 +55,26 @@ public class Solution {
         }
 
             */
+			
+		// O(n) bucket sort
+		
+		var bucket = new List<int>[nums.Length + 1]; // +1 since nums 1-indexed;
+        for(var i  = 0; i < bucket.Length; i++){
+            bucket[i] = new ();
+        }
+
+        foreach(var (num,freq) in count){           
+            bucket[freq].Add(num);
+        }
+
+        var index = 0;
+
+        for(var i = bucket.Length-1; i > 0; i--){
+            foreach (var n in bucket[i]){
+                if (k-- > 0) results[index++] = n;
+                else return results;
+            }
+        }
 
         return result;
     }
