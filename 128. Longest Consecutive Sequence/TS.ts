@@ -1,8 +1,4 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var longestConsecutive = function(nums) {
+function longestConsecutive(nums: number[]): number {
     if (nums.length === 0) return 0;
     const set = new Set(nums);
     let max = 1;
