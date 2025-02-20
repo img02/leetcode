@@ -3,7 +3,7 @@ function threeSum(nums: number[]): number[][] {
     const results: number[][] = []
 
     for(let i = 0; i < nums.length-2; i++){
-        if (1 > 0 && nums[i] == nums[i-1]) continue;
+        if (i > 0 && nums[i] == nums[i-1]) continue;
 
         for(let l = i+1, r = nums.length-1; l < r; ){
             const total = nums[i] + nums[l] + nums[r];
