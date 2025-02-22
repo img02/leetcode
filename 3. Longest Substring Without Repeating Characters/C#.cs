@@ -1,57 +1,57 @@
 public class Solution {
     public int LengthOfLongestSubstring(string s) {
-        var longest = 0;    
-        var usedChars = new Queue<char>();
-
-        for (var i = 0; i < s.Length; i++){                      
-            while (usedChars.Contains(s[i])){
-				//longest = Math.Max(longest, usedChars.Count);
-                usedChars.Dequeue();
-            }            
-            usedChars.Enqueue(s[i]);public class Solution {
-    public int LengthOfLongestSubstring(string s) {
-      return WithDictionary(s);
-      //return WithQueue(s);
+        return WithDictionary(s);
+        //return WithQueue(s);
     }
 
-    public int WithQueue(string s){
-        var longest = 0;    
-        var usedChars = new Queue<char>();
-
-        for (var i = 0; i < s.Length; i++){                      
-            while (usedChars.Contains(s[i])){
-                usedChars.Dequeue();
-            }            
-            usedChars.Enqueue(s[i]);
-            longest = Math.Max(longest, usedChars.Count);
-        }
-		
-        return longest;
-    }
-
+    
     public int WithDictionary(string s){
         var dict = new Dictionary<char,int>();
         var longest = 0;
-        var left = 0;
-
-        for(var right = 0; right < s.Length; right++){
+        
+		var left = 0;
+        var right = 0;
+         while(right < s.Length){
             var c = s[right];
+			//dupe found, move left pointer up
             if(dict.ContainsKey(c)){
                 // plus one, because we want to start at the next index after dupe
+				// need to check max, 
+                // because the old left letter's index wasn't updated.
                 left = Math.Max(left, dict[c] + 1);
             }
+            //add / update letter index
             dict[c] = right;
-            longest = Math.Max(longest, right - left + 1);
+            
+            var substringLength = right - left + 1;
+            longest = Math.Max(longest, substringLength);
+            right++;
         }
 
         return longest;
     }
-}
-            longest = Math.Max(longest, usedChars.Count);
+
+    public int WithQueue(string s){
+        var longest = 0;
+        var q = new Queue<char>();
+
+        var left = 0;
+        var right = 0;
+        while(right < s.Length){
+            var c = s[right];
+            while (q.Contains(c)){
+                q.Dequeue();
+                left++;
+            }
+            
+            q.Enqueue(c);
+            longest = Math.Max(longest, q.Count);
+            right++;
         }
-		
-		// could move and repeat longest to reduce amount of times it's evaluated.
-		//longest = Math.Max(longest, usedChars.Count);        
-        return longest;
+
+        return longest;    
     }
 }
+
+
+
