@@ -11,14 +11,29 @@
  */
 
 function reverseList(head: ListNode | null): ListNode | null {
-    let prev = null;
-
-    while (head !== null){
-        const next = head.next;
-        head.next = prev;
-        prev = head;
-        head = next;
-    }
-
-    return prev;
+    return iterative(head);
+    //return recursive(head, null);
 };
+
+function iterative(head: ListNode | null): ListNode | null {
+    if (head === null) return null; 
+
+    let prev = null;
+    let curr = head;
+
+    while(curr != null){
+        const next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;        
+    }
+    // once curr is null, we break out of loop, and prev will be the new head
+    return prev;
+}
+
+function recursive(head: ListNode | null, prev: ListNode | null): ListNode | null {
+    if (head == null) return prev;
+    const next = head.next;
+    head.next = prev;
+    return recursive(next, head);       
+}
