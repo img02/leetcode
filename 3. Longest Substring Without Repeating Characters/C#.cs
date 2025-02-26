@@ -17,7 +17,12 @@ public class Solution {
             if(dict.ContainsKey(c)){
                 // plus one, because we want to start at the next index after dupe
 				// need to check max, 
-                // because the old left letter's index wasn't updated.
+                // because the OG duped letter's index wasn't updated.
+                // so it might not be part of the substring anymore
+                // in which case we don't need to move the left pointer
+                // e.g. with the string 'abba'
+                // once 'b' dupe found, left pointer moved to 2
+                // when 'a' dupe found, it's the og 'a' which is no longer part of this subtring
                 left = Math.Max(left, dict[c] + 1);
             }
             //add / update letter index
